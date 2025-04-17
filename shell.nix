@@ -4,7 +4,6 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     rustc
-    # rustup
     rustfmt
     cargo
     gcc
@@ -12,7 +11,7 @@ pkgs.mkShell {
 
   shellHook = ''
     echo ""
-    echo "Packages loaded: gcc, cargo, rustc, rustup, rustfmt"
+    echo "Packages loaded: gcc, cargo, rustc, rustfmt"
   '';
 
 }
