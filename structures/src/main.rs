@@ -7,10 +7,10 @@ struct St{
 mod m1{
     #[derive(Debug, Default)]
     pub struct St1{
-        p: i32,
+        pub p: i32,
     }
 
-    pub fn set_p(mut s: St1, x: i32){
+    pub fn set_p(s: &mut St1, x: i32){
         s.p = x;
     }
 
@@ -31,7 +31,8 @@ fn main() {
     println!("a = {} | p = {}", ins.a, ins.p);
 
     let mut oi = m1::St1::default();
-    m1::set_p(oi, 23);
+    println!("p = {}", m1::get_p(oi));
+    m1::set_p(&mut oi, 23);
     println!("p = {}", m1::get_p(oi));
     
 }
