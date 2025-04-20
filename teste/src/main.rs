@@ -3,6 +3,10 @@ fn func() -> u32{
     1233
 }
 
+fn print_type<T>(_: &T) { 
+    println!("{:?}", std::any::type_name::<T>());
+}
+
 fn func2() {
     println!("func2 called");
     fn internal() ->i32{
@@ -40,5 +44,21 @@ fn main() {
     // Function scoping test
     func2();
     // let l = internal(); // Wont work, function is out of scope
+    
+    {
+        let d = 10;
+        let dou = |x|x*2;
+        println!("d = {d} | double = {}", dou(d));
+        print_type(&dou);
+        print_type(&d);
+    }
+
+    {
+        let var = 20;
+        let ptr = &var;
+        let var = 30;
+        println!("drf = {} | var = {}", *ptr, var);
+        // Prints "drf = 20 | var = 30"
+    }
 
 }
