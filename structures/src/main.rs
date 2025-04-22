@@ -15,6 +15,12 @@ impl St{
 
 }
 
+trait TrTest {
+    const TCON:&str = "renato";
+}
+
+impl TrTest for St {}
+
 fn main() {
     println!("Program start");
 
@@ -25,4 +31,6 @@ fn main() {
 
     let inx = St::new(21, 12);
     inx.print();
+
+    println!("\n{}\n", St::TCON);
 }

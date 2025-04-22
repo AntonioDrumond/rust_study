@@ -26,20 +26,8 @@ fn main() {
     }
     println!("a = {a}");
 
-    // Lambda func 
-    let c = {
-        let t1 = 20;
-        let t2 = 3;
-        t1 * t2
-    };
-    println!("\nc = {}", c);
-
     let d = func();
     println!("\nd = {}", d);
-
-    // Patterns test
-    let (x, y) = (15, 32);
-    println!("x = {x} | y = {y}");
 
     // Function scoping test
     func2();
@@ -57,8 +45,14 @@ fn main() {
         let var = 20;
         let ptr = &var;
         let var = 30;
-        println!("drf = {} | var = {}", *ptr, var);
+        println!("drf = {} | var = {}\n", *ptr, var);
         // Prints "drf = 20 | var = 30"
+    }
+
+    {
+        const CON:i32 = 48;
+        println!("{CON}\n");
+        // const CON:i32 = 38; // Doesnt work, cant shadow consts
     }
 
 }
