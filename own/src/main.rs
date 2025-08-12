@@ -61,5 +61,14 @@ fn main() {
         assert_eq!(r1, r2);
     }
 
+    {
+        let mut a = 30;
+        let b1 = &mut a;
+        *b1 += 10;
+        // a = *b1;
+        a -= 5;
+        println!("{a} - {b1}");
+
+    }
 
 }
