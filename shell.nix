@@ -6,12 +6,13 @@ pkgs.mkShell {
     rustc
     rustfmt
     cargo
+    clippy
     gcc
   ];
 
   shellHook = ''
     echo ""
-    echo "Packages loaded: gcc, cargo, rustc, rustfmt"
+    echo "Packages loaded: gcc, cargo, rustc, rustfmt, clippy"
   '';
 
 }
