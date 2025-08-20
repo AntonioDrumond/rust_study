@@ -80,7 +80,7 @@ impl Graph{
     fn check_edge(&self, vert1:i32, vert2:i32) -> bool {
         if vert1 <= self.last_vert && vert2 <= self.last_vert {
             if !self.directed {
-                self.arr[vert1 as usize].contains(&vert2) && self.arr[vert1 as usize].contains(&vert2)
+                self.arr[vert1 as usize].contains(&vert2) && self.arr[vert2 as usize].contains(&vert1)
             }
             else { self.arr[vert1 as usize].contains(&vert2) }
         }
